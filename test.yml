@@ -1,26 +1,27 @@
-version: "3"
-
-services:
-  postgres:
-    container_name: "app_db"
-    image: postgres:<12.3>
-    ports:
-      - "5432:5432"
-    volumes:
-      - <local_storage>:/var/lib/postgres/data
-    environment:
-      - POSTGRES_PASSWORD=<password>
-    networks:
-      - app-net
-
-  app:
-    container_name: "app_test"
-    # build:
-    #   context: "./"
-    #   dockerfile: "Dockerfile"
-    networks:
-      - app-net
-
-networks:
-  app-net:
-    driver: bridge
+# version: "3"
+#
+# services:
+#   postgres:
+#     container_name: "app_db"
+#     image: postgres:12.3
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - /var/lib/postgres/data
+#     environment:
+#       - POSTGRES_PASSWORD=<password>
+#     networks:
+#       - app-net
+#
+#   app:
+#     image: ubuntu:latest
+#     container_name: "app_test"
+#     # build:
+#     #   context: "./"
+#     #   dockerfile: "Dockerfile"
+#     networks:
+#       - app-net
+#
+# networks:
+#   app-net:
+#     driver: bridge
